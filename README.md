@@ -1,2 +1,2 @@
 # Iskoleta-
-Capstone Project of Group 9
+Capstone Project
