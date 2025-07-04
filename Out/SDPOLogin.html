@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Logo.png" type="image/png">
+    <link rel="stylesheet" href="LoginStyle.css">
+    <title>ISKOLETA+</title>
+</head>
+<body>
+    <!-- navigation bar -->
+     <nav class="navbar">
+        <div class="nav-brand">
+            <img src="Logo.png" alt="ISKOLETA+ Logo" class="logo">
+            <div class="nav-title">ISKOLETA+</div> <!-- Title separate from list -->
+        </div>
+        <ul class="nav-links">
+            <li><a href="Home.html#home">Home</a></li>
+            <li><a href="Home.html#about">About</a></li>
+            <li><a href="Home.html#contact">Contact</a></li>
+            <li class="login-dropdown">
+                <a href="#" class="login-btn">Login</a>
+                <ul class="login-submenu">
+                    <li><a href="STLogin.html">Student Login</a></li>
+                    <li><a href="SDPOLogin.html">SDPO Login</a></li>
+                </ul>
+             </li>
+        </ul>
+        </ul>
+    </nav>
+       <!-- Login form -->
+        <div class="full-screen-wrapper">
+            <div class="form-container">
+                <span class="close-btn" onclick="window.location.href='home.html'">&times;</span>
+                <h1 class="login">SDPO Login</h1>
+                <label for="uname"><b>Organizational ID</b></label>
+                <input type="text" placeholder="Enter your organizational ID" name="orgid" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <button class="btn" type="submit">Login</button>
+            </div>
+        </div>
+            
+</body>
+</html>
