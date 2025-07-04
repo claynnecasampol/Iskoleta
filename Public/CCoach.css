@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet');
+
+body {
+  background: linear-gradient(to bottom, rgba(26,12,12,0.95), rgba(95,9,2,0.8));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-y: hidden;
+}
+
+.nav-title {
+   position: fixed; 
+    top: 0;
+    left: 0;
+    width: 97%; 
+    display: flex;
+    text-align: left;
+    padding: 25px 20px;
+    padding-left: 100px;
+    /* soft black fade effect */
+     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)); 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Title bar */
+.nav-title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  display: flex;
+  align-items: center;
+  padding: 25px 100px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  transition: padding-left 0.3s ease-in-out;
+  z-index: 999; 
+}
+
+/* Slide nav title when sidebar is visible */
+body.sidebar-active .nav-title {
+  padding-left: 280px; 
+}
+
+
+/* sidebar container */
+.main-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes logout to bottom */
+  height: 100vh;
+  width: 240px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  font-family: 'Montserrat', sans-serif;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+  padding: 60px 0 20px 0;
+}
+
+/* when active */
+.main-menu.active {
+  transform: translateX(0); 
+}
+
+.main-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* list item styling */
+.main-menu li {
+  margin-top: 10px;
+  padding: 15px 20px;
+  transition: background-color 0.2s;
+}
+
+.main-menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* when list is active */
+.main-menu li a.active,
+.main-menu li a:active {
+  color: #ff2f2f; 
+}
+
+.logout {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #5F0902;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 1200;
+  cursor: pointer;
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.coach-form {
+  width: 100%;
+  max-width: 800px;
+  background-color: #353535;
+  padding: 30px 30px 30px 30px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  margin: 0 auto;
+}
+.coach-form h2 {
+  text-align: left;
+  margin-bottom: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  color: #fff;
+}   
+
+.form-group {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label,
+input {
+  width: 100%; /* or any fixed width like 300px */
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  color: #1c1c1c;
+  border: none;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+
+.create {
+  width: 100%;
+  padding: 12px;
+  background-color: #FFD700;
+  color: #1c1c1c;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.create:hover {
+      background-color: #e6c200;
+} 
+
+@media (max-width: 480px) {
+  .nav-title {
+    font-size: 16px;
+    padding: 16px 56px;
+  } 
+
+  .main-menu {
+    width: 180px;
+    padding-top: 40px;
+  }
+
+  .toggle-btn {
+    top: 12px;
+    left: 12px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .coach-form {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .coach-form h2 {
+    font-size: 20px;
+  }
+
+  input, button {
+    font-size: 14px;
+  }
+}

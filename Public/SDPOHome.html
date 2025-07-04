@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" href="Logo.png" type="image/png">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <link rel="stylesheet" href="HomeStyle.css">
+    <title>ISKOLETA+</title>
+</head>
+<body>
+    <div class="nav-title">Dashboard</div>
+    <button class="toggle-btn" onclick="toggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="container">
+        <nav class="main-menu">
+                <ul>
+                    <li class="home-subnav">
+                        <a href="SDPOHome.html">
+                            <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+                            <span class="nav-text">
+                            Dashboard
+                            </span>
+                        </a> 
+                    </li>
+                    <li class="student-subnav">
+                        <a href="#">
+                            <i class="fa-solid fa-person-walking" style="color: #ffffff;"></i>
+                            <span class="nav-text">
+                                Student-Athlete
+                            </span>
+                        </a>          
+                    </li>
+                    <li class="coach-subnav">
+                        <a href="RegisteredCoach.html">
+                        <i class="fa-solid fa-user-tie" style="color: #ffffff;"></i>
+                            <span class="nav-text">
+                                Coaches
+                            </span>
+                        </a>
+                        
+                    </li>
+                    <li class="profile-subnav">
+                        <a href="ProfileSDPO.html">
+                        <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                            <span class="nav-text">
+                                Profile
+                            </span>
+                        </a>
+                    </li>
+                <li class="logout">
+                    <a href="Home.html">
+                            <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
+                            <span class="nav-text">
+                                Logout
+                            </span>
+                        </a>
+                    </li>  
+                </ul>
+            </nav>
+        </div>
+        <div class="nav-container">
+            <div class="nav-box">
+                <h3>Athletes</h3>
+                <p>View and manage detailed profiles of student-athletes.</p>
+                <!-- The number must be change everytime there's new additional athlete -->
+                 <p>Total Registered: <span id="athlete-count" class="count-name">...</span></p>
+                <button class="access">View Athletes</button>
+            </div>
+
+            <div class="nav-box">
+             <h3>Coaches</h3>
+             <p>View, add, and manage detailed coach profiles.</p>
+                <p>Total Coaches: <span id="coach-count" class="count-name">...</span></p>
+                 <a href="RegisteredCoach.html" class="access">View Coaches</a>
+            </div>
+      
+        </div>
+
+        <script>
+            //sidebar script
+            function toggleSidebar() {
+            document.body.classList.toggle('sidebar-active');
+            document.querySelector('.main-menu').classList.toggle('active');
+            }
+
+            //athletes and coach script
+            document.addEventListener('DOMContentLoaded', function () {
+            // Total athletes from all sports
+            fetch('api/get-total-athletes-sdpo.php')
+                .then(res => res.json())
+                .then(data => {
+                document.getElementById('athlete-count').textContent = data.count;
+                })
+                .catch(err => {
+                console.error('Athlete count error:', err);
+                document.getElementById('athlete-count').textContent = '0';
+                });
+
+            // Total coaches across all sports
+            fetch('api/get-total-coaches.php')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('coach-count').textContent = data.count || '0';
+    })
+    .catch(err => {
+      console.error('Coach count error:', err);
+      document.getElementById('coach-count').textContent = '0';
+    });
+
+
+            });
+
+        </script>
+</body>
+</html>
+

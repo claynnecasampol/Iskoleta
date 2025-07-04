@@ -1,0 +1,45 @@
+Automatically send an email to the coach right after the SDPO create their account.
+What will the coach receive in the email: Organizational ID, temporary Password
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  $name = $_POST['coach_name'];
+  $email = $_POST['coach_email'];
+  $sport = $_POST['sport'];
+  $org_id = $_POST['org_id'];
+  $temp_password = $_POST['temp_password'];
+
+  // 📬 Compose the email
+  $subject = "Your Coach Account Credentials";
+  $message = "
+    Hi $name,
+
+    You've been registered as a coach for $sport.
+
+    Your credentials:
+    - Organizational ID: $org_id
+    - Temporary Password: $temp_password
+
+    Please log in to your account and update your password.
+
+    This is an automated message from the Athletics System.
+  ";
+
+  $headers = "From: athletics@yourdomain.com\r\n";
+  $headers .= "Reply-To: athletics@yourdomain.com\r\n";
+  $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+  // ✅ Attempt to send the email
+  if (mail($email, $subject, $message, $headers)) {
+    echo "<p style='color: lightgreen;'>Coach account created and email sent to $email ✔️</p>";
+  } else {
+    echo "<p style='color: orange;'>Coach account created, but email failed to send ⚠️</p>";
+  }
+
+  // Optional: Insert into database
+  // $conn = new mysqli(...);
+  // $stmt = $conn->prepare("INSERT INTO coaches (...) VALUES (...)");
+  // $stmt->bind_param(...);
+  // $stmt->execute();
+}
+?>

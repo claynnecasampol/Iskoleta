@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,900;1,100;1,900&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap');
+
+body {
+  background: linear-gradient(to bottom, rgba(26,12,12,0.95), rgba(95,9,2,0.8));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.nav-title {
+   position: fixed; 
+    top: 0;
+    left: 0;
+    width: 97%; 
+    display: flex;
+    text-align: left;
+    padding: 25px 20px;
+    padding-left: 100px;
+    /* soft black fade effect */
+     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)); 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Title bar */
+.nav-title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  display: flex;
+  align-items: center;
+  padding: 25px 100px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  transition: padding-left 0.3s ease-in-out;
+  z-index: 999; 
+}
+
+/* Slide nav title when sidebar is visible */
+body.sidebar-active .nav-title {
+  padding-left: 280px; 
+}
+
+
+/* sidebar container */
+.main-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes logout to bottom */
+  height: 100vh;
+  width: 240px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  font-family: 'Montserrat', sans-serif;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+  padding: 60px 0 20px 0;
+}
+
+/* when active */
+.main-menu.active {
+  transform: translateX(0); 
+}
+
+.main-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* list item styling */
+.main-menu li {
+  margin-top: 10px;
+  padding: 15px 20px;
+  transition: background-color 0.2s;
+}
+
+.main-menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* when list is active */
+.main-menu li a.active,
+.main-menu li a:active {
+  color: #ff2f2f; 
+}
+
+.logout {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #5F0902;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 1200;
+  cursor: pointer;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Or space-between / space-around as needed */
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+}
+.nav-box {
+  width: 300px;
+  height: 250px;
+  background-color: #4a4a4a; 
+  border-radius: 12px;
+  color: #ffffff;
+  padding: 20px;
+  /* check if relevant */
+  display: flex; 
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); 
+  margin: 10px;
+  text-align: left;
+  border: 2px solid #fff;
+} 
+
+.nav-box h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.nav-box p {
+  font-family: 'Kanit', sans-serif;
+  font-size: 1em;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.count-name {
+  color: #fff;
+  font-size: 2.5em;
+  margin-top: -20px;
+  display: inline-block;
+}
+
+.access {
+  background-color: #5F0902;
+  color: #fff;
+  font-family: 'Kanit', sans-serif;
+  font-size: 0.90em;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.access:hover {
+  background-color: #7a0b03;
+}
+
+.profile-summary {
+  display: flex;
+  justify-content: space-between;
+  background-color: #4a4a4a;
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  width: 90%;
+  max-width: 1000px;
+  margin: 90px auto 0;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.profile-left,
+.profile-right {
+  flex: 1;
+  min-width: 250px;
+}
+
+.profile-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.athlete-name {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.email-info {
+  font-size: 1em;
+  color: #ccc;
+}

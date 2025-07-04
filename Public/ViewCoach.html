@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="Logo.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="ViewCStyle.css" />
+  <title>ISKOLETA+</title>
+</head>
+<body>
+  <div class="nav-title">Coaches</div>
+  <button class="toggle-btn" onclick="toggleSidebar()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="main-menu">
+      <ul>
+        <li class="home-subnav">
+          <a href="SDPOHome.html">
+            <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+            <span class="nav-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="student-subnav">
+          <a href="#">
+            <i class="fa-solid fa-person-walking" style="color: #ffffff;"></i>
+            <span class="nav-text">Student-Athlete</span>
+          </a>
+        </li>
+        <li class="coach-subnav">
+          <a href="RegisteredCoach.html">
+            <i class="fa-solid fa-user-tie" style="color: #ffffff;"></i>
+            <span class="nav-text">Coaches</span>
+          </a>
+        </li>
+        <li class="profile-subnav">
+          <a href="ProfileSDPO.html">
+            <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+            <span class="nav-text">Profile</span>
+          </a>
+        </li>
+        <li class="logout">
+          <a href="Home.html">
+            <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
+            <span class="nav-text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="page-content">
+      <a href="RegisteredCoach.html" class="back-coach">Back to Coach List</a>
+
+      <div class="profile-summary">
+        <div class="profile-left">
+          <h1 class="coach-name" id="coachName">Loading...</h1>
+          <p><strong>Sport Affiliation:</strong> <span id="coachSport">Loading...</span></p>
+          <p><strong>Email:</strong> <span id="coachEmail">Loading...</span></p>
+        </div>
+
+        <div class="profile-right">
+          <p><strong>Organizational ID:</strong> <span id="coachOrg">Loading...</span></p>
+          <p><strong>Contact Number:</strong> <span id="coachContact">Loading...</span></p>
+          <p><strong>Address:</strong> <span id="coachAddress">Loading...</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.body.classList.toggle('sidebar-active');
+      document.querySelector('.main-menu').classList.toggle('active');
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const coachId = params.get("id");
+
+    fetch("http://localhost/SDPO-Portal/Public/get-coaches.php")
+      .then(res => res.json())
+      .then(coaches => {
+        const coach = coaches.find(c => String(c.id) === coachId);
+        if (coach) {
+          document.getElementById("coachName").textContent = coach.name || "Unnamed Coach";
+          document.getElementById("coachSport").textContent = coach.sport || "Not specified";
+          document.getElementById("coachEmail").textContent = coach.email || "No email set";
+          document.getElementById("coachOrg").textContent = coach.org_id || "N/A";
+          document.getElementById("coachContact").textContent = coach.contact || "No number on file";
+          document.getElementById("coachAddress").textContent = coach.address || "No address provided";
+        } else {
+          document.querySelector(".profile-summary").innerHTML = "<p>Coach not found.</p>";
+        }
+      })
+      .catch(error => {
+        console.error("Fetch error:", error);
+        document.querySelector(".profile-summary").innerHTML = "<p>Unable to load coach data.</p>";
+      });
+  </script>
+</body>
+</html>

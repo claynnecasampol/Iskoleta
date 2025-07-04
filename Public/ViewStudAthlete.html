@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" href="Logo.png" type="image/png">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <link rel="stylesheet" href="ViewSAStyle.css">
+    <title>ISKOLETA+</title>
+</head>
+<body>
+    <div class="nav-title">Student-Athlete</div>
+    <button class="toggle-btn" onclick="toggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+        <nav class="main-menu">
+                <ul>
+                    <li class="home-subnav">
+                        <a href="SDPOHome.html">
+                            <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+                            <span class="nav-text">
+                            Dashboard
+                            </span>
+                        </a> 
+                    </li>
+                    <li class="student-subnav">
+                        <a href="#">
+                            <i class="fa-solid fa-person-walking" style="color: #ffffff;"></i>
+                            <span class="nav-text">
+                                Student-Athlete
+                            </span>
+                        </a>          
+                    </li>
+                    <li class="coach-subnav">
+                        <a href="RegisteredCoach.html">
+                        <i class="fa-solid fa-user-tie" style="color: #ffffff;"></i>
+                            <span class="nav-text">
+                                Coaches
+                            </span>
+                        </a>
+                        
+                    </li>
+                    <li class="profile-subnav">
+                        <a href="ProfileSDPO.html">
+                        <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                            <span class="nav-text">
+                                Profile
+                            </span>
+                        </a>
+                    </li>
+                <li class="logout">
+                    <a href="Home.html">
+                            <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
+                            <span class="nav-text">
+                                Logout
+                            </span>
+                        </a>
+                    </li>  
+                </ul>
+            </nav>
+
+        <a href="RegStudAthlete.html" class="back-athlete" >Back to Student-Athlete List</a>
+            <div class="container">
+                 <!-- Photo -->
+                <?php if (!empty($athlete['photo'])): ?>
+                    <div class="form-group" style="text-align: center;">
+                    <img src="uploads/<?= htmlspecialchars($athlete['photo']) ?>" alt="2x2 Profile Photo"
+                        style="width: 160px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #ccc;">
+                    <p style="margin-top: 8px; color: #ccc;">Uploaded 2"x2" ID Photo</p>
+                    </div>
+                <?php endif; ?>
+
+                <h2>I. Personal Profile</h2>
+
+                <div class="form-row">
+                    <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['lastname'] ?? 'Not set') ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['firstname'] ?? 'Not set') ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                    <label>Middle Name</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['middlename'] ?? 'Not set') ?>" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Sport Affiliation</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['event'] ?? 'Not set') ?>" readonly>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['bday'] ?? 'Not set') ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                    <label>Age</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['age'] ?? 'Not set') ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                    <label>Height (cm)</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['height'] ?? 'Not set') ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                    <label>Weight (kg)</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['weight'] ?? 'Not set') ?>" readonly>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['schoolmail'] ?? 'Not set') ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['contact'] ?? 'Not set') ?>" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Home Address</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['home_address'] ?? 'Not set') ?>" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Provincial Address</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['provincial_address'] ?? 'Not set') ?>" readonly>
+                </div>
+
+                <h2>II. Educational Background</h2>
+                <div class="form-group">
+                    <label>Elementary</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['elemementary'] ?? 'Not set') ?>" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Secondary</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['secondary'] ?? 'Not set') ?>" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Senior High School</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['shs'] ?? 'Not set') ?>" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Previous Program (Transferee)</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['transferee'] ?? 'Not set') ?>" readonly>
+                </div>
+                <div class="form-group">
+                    <label>SHS Track/Strand</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['track/strand'] ?? 'Not set') ?>" readonly>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                    <label>G10 GWA</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['g10'] ?? 'Not set') ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                    <label>G11 GWA</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['g11'] ?? 'Not set') ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                    <label>G12 GWA</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['g12'] ?? 'Not set') ?>" readonly>
+                    </div>
+                </div>
+
+                <h2>III. Sports Participation</h2>
+                <?php
+                    $tournaments = $athlete['ntournament'] ?? [];
+                    $levels = $athlete['level'] ?? [];
+                    $years = $athlete['year'] ?? [];
+                    $awards = $athlete['awards'] ?? [];
+
+                    if (!empty($tournaments)) {
+                    for ($i = 0; $i < count($tournaments); $i++): ?>
+                        <div class="form-row">
+                        <div class="form-group">
+                            <label>Name of Tournament</label>
+                            <input type="text" value="<?= htmlspecialchars($tournaments[$i]) ?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Level</label>
+                            <input type="text" value="<?= htmlspecialchars($levels[$i] ?? '—') ?>" readonly>
+                        </div>
+                        </div>
+                        <div class="form-row">
+                        <div class="form-group">
+                            <label>Year</label>
+                            <input type="text" value="<?= htmlspecialchars($years[$i] ?? '—') ?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Awards</label>
+                            <input type="text" value="<?= htmlspecialchars($awards[$i] ?? '—') ?>" readonly>
+                        </div>
+                        </div>
+                        <hr style="margin: 30px 0; border-color: #666;">
+                    <?php endfor;
+                    } else {
+                    echo "<p>No sports participation records found.</p>";
+                    }
+                ?>
+
+                <h2>IV. Vaccination & PhilHealth Info</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                    <label>Vaccination Status</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['vaccination'] ?? 'Not provided') ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                    <label>PhilHealth Card No.</label>
+                    <input type="text" value="<?= htmlspecialchars($athlete['philhealth'] ?? 'Not provided') ?>" readonly>
+                    </div>
+                </div>
+
+                <h2>V. Preferred Program/Course</h2>
+                    <div class="form-group">
+                        <label>First Choice</label>
+                        <input type="text" value="<?= htmlspecialchars($athlete['first-choice'] ?? 'Not selected') ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Second Choice</label>
+                        <input type="text" value="<?= htmlspecialchars($athlete['second-choice'] ?? 'Not selected') ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Third Choice</label>
+                        <input type="text" value="<?= htmlspecialchars($athlete['third-choice'] ?? 'Not selected') ?>" readonly>
+                </div>
+
+            </div>        
+
+        <script>
+            //sidebar script
+            function toggleSidebar() {
+            document.body.classList.toggle('sidebar-active');
+            document.querySelector('.main-menu').classList.toggle('active');
+            }
+        </script>
+    </body>
+</html>    

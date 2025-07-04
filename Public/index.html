@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Coach Directory</title>
+</head>
+<body>
+  <h2>Create Coach Account</h2>
+  <form action="save-coach.php" method="POST">
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Sport:</label><br>
+    <input type="text" name="sport" required><br><br>
+
+    <label>Org ID:</label><br>
+    <input type="text" name="org_id" required><br><br>
+
+    <label>Password:</label><br>
+    <input type="password" name="password" required><br><br>
+
+    <label>Contact:</label><br>
+    <input type="text" name="contact"><br><br>
+
+    <label>Address:</label><br>
+    <textarea name="address"></textarea><br><br>
+
+    <input type="submit" value="Create Account">
+  </form>
+
+  <hr>
+
+  <h2>Registered Coaches:</h2>
+  <div id="coachList"></div>
+
+  <script>
+    fetch("http://127.0.0.1:8000/api/coaches")
+      .then(res => res.json())
+      .then(data => {
+        const output = data.map(coach =>
+          `<p><strong>${coach.name}</strong> (${coach.sport}) – ${coach.org_id}</p>`
+        ).join('');
+        document.getElementById('coachList').innerHTML = output;
+      })
+      .catch(err => {
+        console.error("Error fetching coaches:", err);
+      });
+  </script>
+</body>
+</html>
