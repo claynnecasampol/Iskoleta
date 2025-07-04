@@ -31,6 +31,15 @@
                         <span class="nav-text">Student-Athlete</span>
                     </a>
                 </li>
+                <!-- New -->
+                 <li class="grades-subnav">
+                        <a href="GradesView.html">
+                        <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                            <span class="nav-text">
+                                Grades
+                            </span>
+                        </a>
+                    </li>
                 <li class="approval-subnav">
                     <a href="{{ url('Application') }}">
                         <i class="fa-solid fa-list-check" style="color: #ffffff;"></i>
