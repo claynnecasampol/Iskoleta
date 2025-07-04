@@ -8,7 +8,9 @@ use App\Http\Controllers\SDPOController;
 use Illuminate\Support\Facades\Auth;
 
 // Home
-Route::view('/', 'welcome')->name('home');
+Route::get('/home', function () {
+    return view('home.Home');
+});
 
 // Registration
 Route::get('/register',    [StudentController::class, 'showRegisterForm'])->name('register.form');

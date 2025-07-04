@@ -57,12 +57,10 @@
                             </span>
                         </a>
                     </li>
-                <li class="logout">
-                    <a href="Home.html">
+                    <li class="logout">
+                    <a href="{{ url('/home') }}">
                             <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
-                            <span class="nav-text">
-                                Logout
-                            </span>
+                            <span class="nav-text">Logout</span>
                         </a>
                     </li>  
                 </ul>

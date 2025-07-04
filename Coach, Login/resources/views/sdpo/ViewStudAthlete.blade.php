@@ -47,7 +47,7 @@
                 </a>
             </li>
             <li class="logout">
-                <a href="{{ url('/') }}">
+                <a href="{{ url('/home') }}">
                     <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
                     <span class="nav-text">Logout</span>
                 </a>

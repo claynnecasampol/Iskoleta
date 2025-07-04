@@ -31,7 +31,7 @@
                         <span class="nav-text">Student-Athlete</span>
                     </a>
                 </li>
-                <!-- New -->
+                <!-- New. Need to edit this -->
                  <li class="grades-subnav">
                         <a href="GradesView.html">
                         <i class="fa-solid fa-user" style="color: #ffffff;"></i>
@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li class="logout">
-                    <a href="{{ url('Home') }}">
+                    <a href="{{ url('/home') }}">
                         <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
                         <span class="nav-text">Logout</span>
                     </a>
