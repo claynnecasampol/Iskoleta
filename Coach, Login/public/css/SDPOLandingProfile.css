@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet');
+
+body {
+  background: linear-gradient(to bottom, rgba(26,12,12,0.95), rgba(95,9,2,0.8));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-title {
+   position: fixed; 
+    top: 0;
+    left: 0;
+    width: 97%; 
+    display: flex;
+    text-align: left;
+    padding: 25px 20px;
+    padding-left: 100px;
+    /* soft black fade effect */
+     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)); 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Title bar */
+.nav-title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  display: flex;
+  align-items: center;
+  padding: 25px 100px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  transition: padding-left 0.3s ease-in-out;
+  z-index: 999; 
+}
+
+/* Slide nav title when sidebar is visible */
+body.sidebar-active .nav-title {
+  padding-left: 280px; 
+}
+
+
+/* sidebar container */
+.main-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes logout to bottom */
+  height: 100vh;
+  width: 240px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  font-family: 'Montserrat', sans-serif;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+  padding: 60px 0 20px 0;
+}
+
+/* when active */
+.main-menu.active {
+  transform: translateX(0); 
+}
+
+.main-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* list item styling */
+.main-menu li {
+  margin-top: 10px;
+  padding: 15px 20px;
+  transition: background-color 0.2s;
+}
+
+.main-menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* when list is active */
+.main-menu li a.active,
+.main-menu li a:active {
+  color: #ff2f2f; 
+}
+
+.logout {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #5F0902;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 1200;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: #3b3b3b;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+  align-content: center;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #FFD700;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left; /* ensures label stays left-aligned */
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: left; /* just in case something overrides it */
+}
+
+input {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: block; /* centers the input while keeping label aligned left */
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-gold {
+  display: inline-block;
+  background-color: #FFD700;
+  color: #1c1c1c;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-gold:hover {
+  background-color: #e6c200;
+}
+
+.profile-view {
+  text-align: left;
+}
+
+.profile-details-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.profile-details-row p {
+  margin: 0;
+  font-size: 15px;
+  flex: 1;
+  min-width: 180px;
+}
+
+#passwordFields input {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: block;
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.button-row .btn-gold {
+  width: fit-content;
+}
+
+.profile-card p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.profile-name {
+  font-size: 1.8em;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #FFD700;
+}
+
+@media (max-width: 600px) {
+  .nav-title {
+    font-size: 16px;
+    padding: 16px 56px;
+  } 
+
+  .main-menu {
+    width: 180px;
+    padding-top: 40px;
+  }
+
+  .toggle-btn {
+    top: 12px;
+    left: 12px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  
+  .container {
+    margin: 50px 10px;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: left; /* keep the text inside input aligned properly */
+ }
+
+ #passwordFields input {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+ }
+
+  .button-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .btn-gold {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+  }
+}

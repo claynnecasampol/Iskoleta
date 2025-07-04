@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet');
+
+body {
+    background-image: url('/images/BgOut.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    /* dark mode effect for background */
+    background-color: rgba(0, 0, 0, 0.5); 
+    background-blend-mode: multiply;
+    height: 120vh; 
+}
+
+/* navigation */
+
+/* navigation style */
+.navbar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 97%; 
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 30px;
+    /* soft black fade effect */
+     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)); 
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and title */
+}
+
+.nav-logo {
+  height: 100px;   /* or adjust as needed */
+  width: auto;
+}
+
+/* navigation title */
+.nav-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Kanit', sans-serif; 
+    text-decoration: none;  
+}
+
+/* pages connections */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    padding: 10px 15px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+/* active navigation link */
+.nav-links li a:active,
+.nav-links li a.active { 
+    border-bottom: 3px solid white; 
+}
+
+/* login button */
+.login-btn {
+    background-color: #5F0902;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* login dropdown */
+.login-dropdown {
+  position: relative;
+}
+
+.login-dropdown > .login-btn::after {
+  content: " ▼";
+  font-size: 10px;
+}
+
+.login-submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 8px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  z-index: 1001;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.login-submenu li a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  white-space: nowrap;
+}
+
+.login-submenu li a:hover {
+  background-color: #5F0902;
+  border-radius: 4px;
+}
+
+.login-dropdown:hover .login-submenu {
+  display: block;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between; /* Space between description and form */
+  align-items: center; /* Center items vertically */
+  padding: 20px;
+  gap: 30px;
+  height: 100vh; /* Full viewport height */
+  margin-top: -45%; /* Adjusted margin to avoid overlap with nav */
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.intro {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+} 
+
+.title {
+    font-size: 3vw; 
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1.8vw;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.SignInUp {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+    align-items: left;
+    margin-left: 50px;
+}
+
+button {
+    padding: 12px 4vw; 
+    font-size: 1.8vw; 
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-color: 2px solid #000;
+    cursor: pointer;
+    border-radius: 50px;
+    min-width: 100px; 
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.Qoute {
+    font-size: 1.5vw; 
+    text-align: left;
+    margin-top: 20px;
+    color: #333;
+    margin-left: 40px;
+}
+
+.AthletesImageContainer {
+  display: flex;
+  align-items: center;
+  float: right;
+  width: 50%;
+  margin-top: -35%;
+  margin-right: 30px;
+  justify-content: center;
+}
+
+.AthletesImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+@media (max-width: 600px) {
+   body {
+    height: 150vh; 
+  }
+  /* navigation bar */
+  .navbar {
+        padding: 10px 7px; 
+  }
+
+  .nav-logo {
+    height: 20px;
+  }
+
+  .nav-title {
+    font-size: 4vw; 
+  }
+
+  .nav-links {
+      gap: 3px; 
+  }
+
+  .nav-links li a {
+    font-size: 3.2vw; 
+    padding: 3px 3px; 
+  }
+
+  /* active navigation link */
+  .nav-links li a:active,
+  .nav-links li a.active { 
+    border-bottom: 3px solid white; 
+}
+  
+ .full-screen-wrapper {
+    min-height: 100vh;           /* Make it fill the viewport */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;     
+    overflow-y: auto;
+  }
+
+  .form-container {
+    width: 100%;
+    max-height: none;
+    justify-content: center;
+    margin-top: 100px;
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+  
+  .btn {
+    width: 100%; 
+  }
+
+  .AthletesImageContainer {
+    width: 80%;
+    margin-top: 10px;
+    align-items: center;
+  }
+}

@@ -1,0 +1,37 @@
+.sport-container {
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Space between title and button */
+    position: relative;
+}
+
+.sport-title {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent for readability */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.sport-button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.sport-button img {
+    width: 150px; /* Adjust size */
+    height: auto;
+    border-radius: 10px;
+}
+.sport-button:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
