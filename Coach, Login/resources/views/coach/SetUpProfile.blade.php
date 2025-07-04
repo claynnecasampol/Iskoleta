@@ -58,6 +58,7 @@
         </ul>
     </nav>
 
+    <!-- coach's profile set up -->
     <div class="container">
         <h2>Set Up Your Profile</h2>
         <form action="{{ route('profile.save') }}" method="POST">
@@ -98,11 +99,13 @@
     </div>
 
     <script>
+        //sidebar script
         function toggleSidebar() {
             document.body.classList.toggle('sidebar-active');
             document.querySelector('.main-menu').classList.toggle('active');
         }
-
+        
+        //searchbar script
         document.getElementById("togglePassword").addEventListener("click", function () {
             const fields = document.getElementById("passwordFields");
             const isVisible = fields.style.display === "block";

@@ -67,10 +67,12 @@
             </nav>
         </div>
 
+        <!-- Search bar -->
         <div class="search-wrapper">
             <input type="text" id="coachSearch" placeholder="🔍 Search students by name, sport, or status">
         </div>
 
+        <!-- grades table -->
         <div class="grades-table-container">
            <div class="grades-header">
                 <h2>Grades of Student-Athlete</h2>
@@ -99,6 +101,7 @@
                 </tbody>
             </table>
         </div>
+        
          <script>
             //sidebar script
             function toggleSidebar() {

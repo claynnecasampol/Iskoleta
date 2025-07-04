@@ -63,13 +63,14 @@
     </div>
 
     <div class="nav-container">
+    <!-- Quick access for handled students -->
         <div class="nav-box">
             <h3>Athletes</h3>
             <p>View and manage detailed profiles of student-athletes.</p>
             <p>Total Registered: <span id="athlete-count" class="count-name">...</span></p>
             <a href="{{ route('coach.registered') }}" class="access">View Athletes</a>
         </div>
-
+    <!-- Quick access for pending students -->
         <div class="nav-box">
             <h3>Pending Approval</h3>
             <p>Student-athlete applications are pending verification for approval.</p>

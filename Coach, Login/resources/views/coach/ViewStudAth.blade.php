@@ -59,7 +59,7 @@
 
     <a href="{{ url('RegStudAthlete') }}" class="back-athlete">Back to Student-Athlete List</a>
 
-    <!-- Profile Summary Section -->
+    <!-- Student-Athlete Profile -->
     <div class="profile-view">
         <div class="profile-left">
             <h1 class="athlete-name">
@@ -83,6 +83,7 @@
                 </div>
             @endif
 
+            <!-- Athletic Profile -->
             <h2>I. Personal Profile</h2>
 
             <div class="form-row">
@@ -234,6 +235,7 @@
     </div>
 
     <script>
+        //sidebar script
         function toggleSidebar() {
             document.body.classList.toggle('sidebar-active');
             document.querySelector('.main-menu').classList.toggle('active');

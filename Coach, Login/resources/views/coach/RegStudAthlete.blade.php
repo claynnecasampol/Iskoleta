@@ -60,10 +60,12 @@
         </nav>
     </div>
 
+    <!-- search bar -->
     <div class="search-wrapper">
         <input type="text" id="coachSearch" placeholder="🔍 Search athletes by name, sport, or ID">
     </div>
 
+    <!-- table -->
     <div class="coach-table-container">
         <div class="coach-header">
             <h2>Student-Athlete</h2>
@@ -109,11 +111,13 @@
     </div>
 
     <script>
+        //sidebar script
         function toggleSidebar() {
             document.body.classList.toggle('sidebar-active');
             document.querySelector('.main-menu').classList.toggle('active');
         }
 
+        //searchbar script
         document.getElementById("coachSearch").addEventListener("input", function () {
             const keyword = this.value.toLowerCase();
             const rows = document.querySelectorAll(".coach-table tbody tr");

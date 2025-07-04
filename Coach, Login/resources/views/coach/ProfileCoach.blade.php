@@ -58,6 +58,7 @@
         </ul>
     </nav>
 
+    <!-- Coach's Profile -->
     <div class="container profile-view">
         <h2>Coach Admin Profile</h2>
 

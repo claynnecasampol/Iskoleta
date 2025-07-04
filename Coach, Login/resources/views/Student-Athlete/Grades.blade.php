@@ -53,7 +53,7 @@
             </ul>
         </nav>
     </div>
-
+    <!-- inputing of grades of student-athlete -->
     <div class="grade-form">
         <h2>Academic Grade Evaluation</h2>
 

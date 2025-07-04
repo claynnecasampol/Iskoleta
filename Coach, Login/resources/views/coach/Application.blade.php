@@ -8,6 +8,7 @@
     <i class="fa-solid fa-bars"></i>
 </button>
 
+<!-- sidebar -->
 <nav class="main-menu">
     <ul>
         <li class="home-subnav">
@@ -43,6 +44,7 @@
     </ul>
 </nav>
 
+<!-- student for verification profile -->
 <div class="profile-view">
     <div class="profile-left">
         <h1 class="athlete-name">
@@ -61,6 +63,7 @@
         <button type="button" id="viewAthleticInfo" class="btn-gold">Athletic Information</button>
     </div>
 
+    <!-- athletic profile -->
     <div id="athleteProfile" style="display: none;">
         @if (!empty($athlete['photo']))
         <div class="form-group" style="text-align: center;">
@@ -230,6 +233,7 @@
             <input type="text" value="{{ $athlete['third-choice'] ?? 'Not selected' }}" readonly>
         </div>
 
+        <!-- Approve and reject button -->
         <div class="button-row" style="margin-top: 30px;">
             <button type="button" class="btn-gold">Approve</button>
             <button type="submit" class="btn-gold">Reject</button>
