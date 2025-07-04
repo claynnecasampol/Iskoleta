@@ -40,7 +40,7 @@
 
                 <button class="btn" type="submit">Send Verification Code</button>
 
-                <span class="log">Back to <a href="{{ url('/') }}" class="Home">Home</a></span>
+                <span class="log">Back to <a href="{{ url('/home') }}" class="Home">Home</a></span>
             </form>
         </div>
     </div>
