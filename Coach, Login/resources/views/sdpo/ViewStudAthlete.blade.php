@@ -56,7 +56,38 @@
     </nav>
 
     <a href="{{ url('/sdpo/registered-students') }}" class="back-athlete">Back to Student-Athlete List</a>
+    
+         <!-- new -->
+        <div class="profile-view">
+            <div class="profile-left">
+                <h1 class="athlete-name">
+                <?= (!empty($athlete['firstname']) || !empty($athlete['lastname']))
+                    ? htmlspecialchars($athlete['firstname'] . ' ' . $athlete['lastname'])
+                    : 'Unnamed Athlete'; ?>
+                </h1>
 
+                <p><strong>School Email:</strong>
+                <?= !empty($athlete['schoolmail']) ? htmlspecialchars($athlete['schoolmail']) : 'Email not set'; ?>
+                </p>
+            </div>
+            <!-- new also -->
+            <div class="profile-right">
+                <!-- add this to here -->
+                 <!-- note: the coach can set the status of student-athlete -->
+                <div class="status-setting" style="text-align: right; margin-top: -20px; margin-bottom: 20px;">
+                    <form method="POST" action="update-status.php">
+                        <input type="hidden" name="athlete_id" value="<?= $athlete['id'] ?>">
+                        <label for="status" style="font-weight: 600; color: #FFD700;">Set Status:</label>
+                        <select name="status" id="status" style="padding: 6px 12px; border-radius: 6px; margin-left: 10px;">
+                        <option value="Active" <?= $athlete['status'] === 'Active' ? 'selected' : '' ?>Active</option>
+                        <option value="Not Active" <?= $athlete['status'] === 'Not Active' ? 'selected' : '' ?>Not Active</option>
+                        <option value="Undergraduate" <?= $athlete['status'] === 'Undergraduate' ? 'selected' : '' ?>Undergraduate</option>
+                        <option value="Graduate" <?= $athlete['status'] === 'Graduate' ? 'selected' : '' ?>Graduate</option>
+                        </select>
+                        <button type="submit" class="set-status-btn">Set Status</button>
+                    </form>
+                </div>
+                
     <div class="container">
         {{-- Photo --}}
         @if (!empty($athlete->photo))
