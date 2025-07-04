@@ -28,6 +28,13 @@
                     <span class="nav-text">Student-Athlete</span>
                 </a>
             </li>
+              <!-- New. Need to edit this -->
+            <li class="grades-subnav">
+                <a href="GradesView.html">
+                     <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                    <span class="nav-text">Grades</span>
+                </a>
+            </li>
             <li class="coach-subnav">
                 <a href="{{ url('/sdpo/registered-coach') }}">
                     <i class="fa-solid fa-user-tie" style="color: #ffffff;"></i>
